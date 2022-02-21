@@ -1,0 +1,13 @@
+name: ElytraTrails
+version: ${project.version}
+main: me.gabriel.elytratrails.ElytraTrails
+api-version: 1.17
+depend: [VanishNoPacket]
+authors: [ Gabriel ]
+description: Equippable elytra trails for players.
+commands:
+  elytratrails:
+    description: Opens up the elytra trails menu.
+    usage: /<command>
+    aliases: [et]
+    permission: elytratrails.command
