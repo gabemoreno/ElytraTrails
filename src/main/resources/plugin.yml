@@ -2,7 +2,8 @@ name: ElytraTrails
 version: ${project.version}
 main: me.gabriel.elytratrails.ElytraTrails
 api-version: 1.17
-depend: [VanishNoPacket]
+depend:
+  - VanishNoPacket
 authors: [ Gabriel ]
 description: Equippable elytra trails for players.
 commands:

@@ -25,7 +25,6 @@ public abstract class Menu implements InventoryHolder {
     public List<Player> getViewersList(){
         return viewers;
     }
-    //test
 
     @Override
     public Inventory getInventory() {

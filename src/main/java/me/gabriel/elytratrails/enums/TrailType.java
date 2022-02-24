@@ -8,7 +8,7 @@ import org.bukkit.inventory.ItemStack;
 
 public enum TrailType {
 
-    FEAST(new Feast()), FORAGER(new Forager()), WOODLAND(new Woodland()), PARTY(new Party()), FROST(new Frost());
+    FEAST(new Feast()), FORAGER(new Forager()), WOODLAND(new Woodland()), PARTY(new Party()), FROST(new Frost()), BEACHY(new Beachy()), FLORAL(new Floral()), GLOSSY(new Glossy()), EGG(new Egg());
 
     private final Trail trail;
 

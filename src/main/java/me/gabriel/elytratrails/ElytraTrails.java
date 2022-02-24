@@ -9,11 +9,8 @@ import me.gabriel.elytratrails.util.MenuUtil;
 import me.gabriel.elytratrails.util.TrailUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.kitteh.vanish.VanishManager;
 import org.kitteh.vanish.VanishPlugin;
@@ -31,11 +28,6 @@ public final class ElytraTrails extends JavaPlugin {
     private VanishManager manager;
     @Override
     public void onEnable() {
-        ItemStack item = new ItemStack(Material.CHEST);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(MenuUtil.getPluginGradientName());
-        item.setItemMeta(meta);
-        Bukkit.getPlayer("Watermelonely").getInventory().addItem(item);
         instance = this;
         manager = ((VanishPlugin) Bukkit.getPluginManager().getPlugin("VanishNoPacket")).getManager();
         listeners.forEach(listener -> Bukkit.getPluginManager().registerEvents(listener.get(), this));

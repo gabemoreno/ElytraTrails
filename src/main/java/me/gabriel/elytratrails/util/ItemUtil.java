@@ -1,13 +1,18 @@
 package me.gabriel.elytratrails.util;
 
+import com.destroystokyo.paper.profile.PlayerProfile;
+import com.destroystokyo.paper.profile.ProfileProperty;
 import me.gabriel.elytratrails.ElytraTrails;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.persistence.PersistentDataType;
 
 import java.util.Arrays;
+import java.util.UUID;
 
 public class ItemUtil {
 
@@ -41,5 +46,25 @@ public class ItemUtil {
         meta.setLore(Arrays.asList(lore));
         item.setItemMeta(meta);
         return item;
+    }
+
+    public static ItemStack getSkull(String name, String texture) {
+        ItemStack skull= new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
+
+        if (texture == null || texture.isEmpty())
+            return skull;
+
+        SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+
+        skullMeta.setPlayerProfile(Bukkit.createProfile(UUID.randomUUID(), null));
+
+        PlayerProfile profile = skullMeta.getPlayerProfile();
+
+        profile.getProperties().add(new ProfileProperty("textures", texture));
+
+        skullMeta.setPlayerProfile(profile);
+        skullMeta.setDisplayName(name);
+        skull.setItemMeta(skullMeta);
+        return skull;
     }
 }
